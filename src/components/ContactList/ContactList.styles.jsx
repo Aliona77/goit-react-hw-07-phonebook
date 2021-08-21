@@ -20,6 +20,7 @@ font-weight: 500;
 export const ButtonDelete = styled.button`
 background-color: #fff;
 cursor: pointer;
+margin-left: 20px;
   border-radius:5px;
   border: 1px solid black;
   cursor: pointer;

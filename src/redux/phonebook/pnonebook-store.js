@@ -1,20 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-//import { setupListeners } from '@reduxjs/toolkit/query';
-import { contactsReducer } from "../contacts/contactsSlice";
-import { contactApi } from "../contacts";
-
-export const store = configureStore({
-  reducer: {
-    contacts: contactsReducer,
-    [contactApi.reducerPath]: contactApi.reducer,
-  },
-  middleware: (getDefaultMiddleware) => [
-    ...getDefaultMiddleware(),
-    contactApi.middleware,
-  ],
-});
-
-// import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 // import logger from "redux-logger";
 // import {
 //   persistStore,
@@ -28,7 +12,22 @@ export const store = configureStore({
 // } from "redux-persist";
 
 // import storage from "redux-persist/lib/storage";
-// import contactsReducer from "./phonebook-reducer";
+
+import contactsReducer from "./phonebook-reducer";
+import { contactApi } from "./phonebook-slice";
+import { setupListeners } from "@reduxjs/toolkit/query";
+export const store = configureStore({
+  reducer: {
+    contacts: contactsReducer,
+    [contactApi.reducerPath]: contactApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) => [
+    ...getDefaultMiddleware(),
+    contactApi.middleware,
+  ],
+});
+
+setupListeners(store.dispatch);
 
 // const persistConfig = {
 //   key: "contacts",
@@ -48,6 +47,7 @@ export const store = configureStore({
 // export const store = configureStore({
 //   reducer: {
 //     contacts: persistReducer(persistConfig, contactsReducer),
+//     [contactApi]
 //   },
 //   middleware,
 //   devTools: process.env.NODE_ENV === "development",

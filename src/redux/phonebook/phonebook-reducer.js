@@ -1,5 +1,3 @@
-//===========REDUX_TOOLKIT==============
-
 import { createReducer, combineReducers } from "@reduxjs/toolkit";
 import * as actions from "./phonebook-actions";
 

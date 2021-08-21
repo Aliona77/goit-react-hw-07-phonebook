@@ -30,13 +30,3 @@ const Filter = () =>{
 
 export default Filter;
 
-//=========REDUX==================
-
-// const mapStateToPropes = (state) => ({
-//     value: state.filter
-// })
-// const mapDispatchToProps = dispatch => ({
-//  onChange:(e)=>dispatch(actions.changeFilter(e.target.value)),
-// });
-
-// export default connect(mapStateToPropes, mapDispatchToProps)(Filter); 
