@@ -9,9 +9,9 @@ padding: 0;
 
 export const ContactItem = styled.li`
 display:flex;
-text-align:center;
 align-items: center;
-justify-content: space-around;
+justify-content: space-between;
+
 `
 export const Text = styled.p`
 font-size:18px;

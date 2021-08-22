@@ -3,14 +3,13 @@ import Container from './components/Container/Container';
 import Filter from './components/Filter/Filter.jsx';
 import {ContactForm }from './components/ContactForm/ContactForm.jsx';
 import {ContactList} from './components/ContactList/ContactList';
-import  Spinner from './components/Spinner/Spinner';
+import  {Spinner} from './components/Spinner/Spinner';
 
 
 
 
 export const  App=()=>{
   const { data: contacts, isFetching } = useFetchContactsQuery();
-  //const [deleteContact, { isLoadig: isDeleting }] = useDeleteContactMutation();
 
     return (
       <Container title="Phonebook">
