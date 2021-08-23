@@ -11,6 +11,7 @@ export const Containers = styled.div`
   width: 360px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40px;
   padding: 20px 40px;
 
   background-color: rgb(47, 206, 255);
