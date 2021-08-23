@@ -1,10 +1,8 @@
 import { Contact, ContactItem, ButtonDelete, Text } from './ContactList.styles'
-//import { onFilteredContacts } from '../../redux/phonebook/pnonebook-selector';
 import { useDeleteContactMutation } from '../../redux/phonebook/phonebook-slice';
 
 
 export  const ContactList = ({ contacts}) => {
-    // const contacts = useSelector(onFilteredContacts);
    
   const [deleteContact, { isloading: isDeleting }] = useDeleteContactMutation();
     return (

@@ -9,7 +9,8 @@ const Filter = () =>{
      const value = useSelector(getFilter)
     const dispatch = useDispatch()
     
-    const changeFilterInput = (e) => dispatch(actions.changeFilter(e.currentTarget.value));
+    const changeFilterInput = (e) =>{
+        dispatch(actions.changeFilter(e.currentTarget.value))};
 
     return (
         <>
