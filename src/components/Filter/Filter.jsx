@@ -1,17 +1,12 @@
-
 import { Input } from '../ContactForm/ContactForm.styles';
 import { Text } from './Filter.styles';
-import { useSelector, useDispatch } from 'react-redux';
-import  * as actions from '../../redux/phonebook/phonebook-actions';
-import { getFilter } from '../../redux/phonebook/pnonebook-selector';
 
-const Filter = () =>{
-     const value = useSelector(getFilter)
-    const dispatch = useDispatch()
-    
-    const changeFilterInput = (e) =>{
-        dispatch(actions.changeFilter(e.currentTarget.value))};
 
+const Filter = ({filter}) =>{
+
+const changeFilterInput= e => {
+    filter(e.currentTarget.value);
+  };
     return (
         <>
             <Text>Find contact by name</Text>
@@ -21,7 +16,6 @@ const Filter = () =>{
                 placeholder="Name to search"
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-                value={value}
                 onChange={changeFilterInput}
                 required>
                 </Input>
